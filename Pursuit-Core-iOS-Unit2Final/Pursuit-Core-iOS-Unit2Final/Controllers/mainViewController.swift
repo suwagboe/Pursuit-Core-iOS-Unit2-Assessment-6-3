@@ -84,7 +84,11 @@ extension mainViewController: UITableViewDataSource {
         
         // configure cell
         cell.textLabel?.text = crayon.name
+        cell.textLabel?.textColor = .white
+        
+        
         cell.detailTextLabel?.text = crayon.hex
+        cell.detailTextLabel?.textColor = .white
         //cell.tintColor
        // cell.backgroundView?.backgroundColor = UIColor(red: CGFloat(crayon.red), green: CGFloat(crayon.green), blue: CGFloat(crayon.blue), alpha: 1.0)
         

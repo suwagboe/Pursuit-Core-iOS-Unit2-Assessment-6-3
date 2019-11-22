@@ -141,7 +141,7 @@
                                     <action selector="SliderChangedO:" destination="TxF-9h-OKv" eventType="valueChanged" id="DwT-Ql-dXb"/>
                                 </connections>
                             </slider>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="RXQ-9Q-L2K">
+                            <stepper opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="RXQ-9Q-L2K">
                                 <rect key="frame" x="210" y="608" width="94" height="32"/>
                                 <connections>
                                     <action selector="alphaStepperChangedO:" destination="TxF-9h-OKv" eventType="valueChanged" id="rZB-gN-HsU"/>
@@ -182,16 +182,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="jNS-3I-GSa"/>
                     <connections>
-                        <outlet property="alphaStepper" destination="RXQ-9Q-L2K" id="Mgm-OG-dNj"/>
+                        <outlet property="alphaStepper" destination="RXQ-9Q-L2K" id="fja-Q8-AWw"/>
+                        <outlet property="alphaStepperLabel" destination="bCJ-I7-gFu" id="uzo-yL-pqV"/>
                         <outlet property="blueSlider" destination="FP9-TQ-6rm" id="FIE-8k-fiO"/>
+                        <outlet property="blueSliderLabel" destination="Mok-fW-EJb" id="uo6-Q1-rBd"/>
                         <outlet property="colorNameLabel" destination="Vzi-Lh-dkT" id="pXj-za-KiA"/>
                         <outlet property="greenSlider" destination="ysn-4n-5OS" id="OH1-K6-2hb"/>
+                        <outlet property="greenSliderLabel" destination="gm1-1z-XQ5" id="YCe-zG-UJb"/>
                         <outlet property="redSlider" destination="Cpd-Cn-m09" id="OLY-Oy-lqV"/>
+                        <outlet property="redSliderLabel" destination="Lwg-17-fxe" id="TxG-vH-AWE"/>
                         <outlet property="restButton" destination="q7X-m1-DJg" id="d3k-ck-CFW"/>
-                        <outletCollection property="sliderOutlets" destination="Lwg-17-fxe" collectionClass="NSMutableArray" id="cUk-zs-drh"/>
-                        <outletCollection property="sliderOutlets" destination="Mok-fW-EJb" collectionClass="NSMutableArray" id="cua-Kw-7aW"/>
-                        <outletCollection property="sliderOutlets" destination="gm1-1z-XQ5" collectionClass="NSMutableArray" id="WGi-w3-r2a"/>
-                        <outletCollection property="sliderOutlets" destination="bCJ-I7-gFu" collectionClass="NSMutableArray" id="Bko-1k-T1P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUa-Tw-zMB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

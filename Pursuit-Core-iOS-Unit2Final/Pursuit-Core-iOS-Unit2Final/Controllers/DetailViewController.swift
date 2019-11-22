@@ -21,20 +21,20 @@ class DetailViewController: UIViewController {
     // variable for the red slider
   
    // use this label to change the color of the fonts based on color of background
-    @IBOutlet var sliderOutlets: [UILabel]!
     
+      @IBOutlet weak var redSliderLabel: UILabel!
     @IBOutlet weak var redSlider: UISlider!
     
     // variables for the blue slider
-  //  @IBOutlet weak var blueSliderLabel: UILabel!
+   @IBOutlet weak var blueSliderLabel: UILabel!
     @IBOutlet weak var blueSlider: UISlider!
     
     // variables for the green slider
-  //  @IBOutlet weak var greenSliderLabel: UILabel!
+   @IBOutlet weak var greenSliderLabel: UILabel!
     @IBOutlet weak var greenSlider: UISlider!
     
     // variable for the alpha slider that is preset to be equal to 1.0
-  //  @IBOutlet weak var alphaStepperLabel: UILabel!
+   @IBOutlet weak var alphaStepperLabel: UILabel!
     @IBOutlet weak var alphaStepper: UIStepper!
     
     @IBOutlet weak var restButton: UIButton!
@@ -63,11 +63,17 @@ class DetailViewController: UIViewController {
         }
         
         colorNameLabel.text = detailsCrayon.name
+        colorNameLabel.textColor = .white
+        
+        redSliderLabel.textColor = .white
+        blueSliderLabel.textColor = .white
+        greenSliderLabel.textColor = .white
+        alphaStepperLabel.textColor = .white
         
         redSlider.value = Float(detailsCrayon.red/255)
         blueSlider.value = Float(detailsCrayon.blue/255)
         greenSlider.value = Float(detailsCrayon.green/255)
-        alphaStepper.value = (1.0)
+        alphaStepper.value = 1.0
         
         view.backgroundColor =  UIColor(displayP3Red: CGFloat(detailsCrayon.red/255), green: CGFloat(detailsCrayon.green/255), blue: CGFloat(detailsCrayon.blue/255), alpha: 1.0)
         
@@ -84,6 +90,7 @@ class DetailViewController: UIViewController {
         blueSlider.value = Float(selectedColor.blue/255)
         alphaStepper.value = 1.0
         
+        colorNameLabel.textColor = .black
         
         view.backgroundColor =  UIColor(displayP3Red: CGFloat(selectedColor.red/255), green: CGFloat(selectedColor.green/255), blue: CGFloat(selectedColor.blue/255), alpha: 1.0)
     }
@@ -104,13 +111,18 @@ class DetailViewController: UIViewController {
         else if sender.tag == 2{
                 greenVal = sender.value;
             }
-        
-        view.backgroundColor = UIColor(displayP3Red: CGFloat(redVal), green: CGFloat(greenVal), blue: CGFloat(blueVal), alpha: 1.0)
+        else if sender.tag == 4{
+            alphaStepper.value = Double(sender.value)
+
+        }
+      
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(redVal), green: CGFloat(greenVal), blue: CGFloat(blueVal), alpha: CGFloat(alphaStepper!.value))
         }
     
  @IBAction func alphaStepperChangedO(_ sender: UIStepper ){
     alphaStepper.value = sender.value
     
+   
     
     view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(sender.value))
     }
