@@ -72,9 +72,7 @@ class DetailViewController: UIViewController {
     //action for all the sliders below
     
     @IBAction func SliderChangedO(_ sender: UISlider ){
-        
-       
-        
+//https://stackoverflow.com/questions/14020764/ios-how-to-set-custom-background-colour-with-sliders
         var redVal = redSlider.value
         var greenVal = greenSlider.value
         var blueVal = blueSlider.value
@@ -88,27 +86,11 @@ class DetailViewController: UIViewController {
                 greenVal = sender.value;
             }
         view.backgroundColor = UIColor(displayP3Red: CGFloat(redVal), green: CGFloat(greenVal), blue: CGFloat(blueVal), alpha: 1.0)
-    
         }
-//        var selectedColorAmountOfRed: CGFloat = (CGFloat(selectedColor!.red/255)) {
-//               didSet {
-//                   print("amount of red is CHANGING")
-//               }
-//           }
-    //    selectedColorAmountOfRed = CGFloat(sender.value)
-//        view.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value/255) , green: CGFloat(selectedColor!.green), blue: CGFloat(selectedColor!.blue), alpha: 1.0)
-        
-        
-//        guard let detailsCrayon = selectedColor else {
-//            fatalError("couldn't set the selectedColor properly need to redue. ")
-//        }
-//
-//        view.backgroundColor =  UIColor(displayP3Red: CGFloat(sender.value/255), green: CGFloat(detailsCrayon.green/255), blue: CGFloat(detailsCrayon.blue/255), alpha: 1.0)
-    
-    
-    
     
  @IBAction func alphaStepperChangedO(_ sender: UIStepper ){
+    alphaStepper.value = sender.value
+    view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(sender.value))
     }
     
 }
