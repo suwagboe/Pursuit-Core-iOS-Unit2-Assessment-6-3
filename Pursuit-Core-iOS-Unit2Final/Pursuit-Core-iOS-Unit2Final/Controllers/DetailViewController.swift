@@ -56,10 +56,13 @@ class DetailViewController: UIViewController {
     }
     
     func loadBackgroundColor() {
+        
         // unwrapp the imported color from the main ViewController so that way it is no longer an optional
          guard let detailsCrayon = selectedColor else {
             fatalError("couldn't set the selectedColor properly need to redue. ")
         }
+        
+        colorNameLabel.text = detailsCrayon.name
         
         redSlider.value = Float(detailsCrayon.red/255)
         blueSlider.value = Float(detailsCrayon.blue/255)
