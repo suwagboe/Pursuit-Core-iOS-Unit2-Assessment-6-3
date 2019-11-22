@@ -37,22 +37,26 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var restButton: UIButton!
     
     // takes in selected crayon from previous controller
-    var selectedColor: Crayon? {
-        didSet { // reaction
-            
-        }
-    }
+    var selectedColor: Crayon?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // need to load the color from seleted color to the view here
-        view.backgroundColor = .brown
-
+       // view.backgroundColor = UIColor(loadBackgroundColor())
     }
     
-    func loadData() {
+    func loadBackgroundColor() {
+        // unwrapp the imported color from the main ViewController
+        guard let detailsCrayon = selectedColor else {
+            fatalError("couldn't set the selectedColor properly need to redue. ")
+        }
+        
+        redSlider.value = Float(detailsCrayon.red)
+        blueSlider.value = Float(detailsCrayon.blue)
+        greenSlider.value = Float(detailsCrayon.green)
+        alphaStepper.value = (1.0)
         
     }
     
