@@ -31,6 +31,19 @@ class mainViewController: UIViewController {
     
   }
     
+    //MARK: SEGUE IS BELOW
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dvc = segue.destination as? DetailViewController, let indexpath = tableView.indexPathForSelectedRow
+            else {
+                return
+        }
+        
+        // assigns the selected in the main controller and makes it the color of the next viewcontroller
+        dvc.selectedColor = colors[indexpath.row]
+    }
+    
+    
     // need the loadData function inorder to HAVE data
     func loadData() {
         // gives the above variable crayons the data of the class crayons; all crayons
