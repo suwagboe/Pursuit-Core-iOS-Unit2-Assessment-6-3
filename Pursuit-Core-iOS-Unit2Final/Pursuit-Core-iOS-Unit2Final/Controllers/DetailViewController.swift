@@ -42,7 +42,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadBackgroundColor()
         // need to load the color from seleted color to the view here
        // view.backgroundColor = UIColor(loadBackgroundColor())
     }
@@ -57,6 +57,8 @@ class DetailViewController: UIViewController {
         blueSlider.value = Float(detailsCrayon.blue)
         greenSlider.value = Float(detailsCrayon.green)
         alphaStepper.value = (1.0)
+        
+        view.backgroundColor =  UIColor(displayP3Red: CGFloat(detailsCrayon.red/255), green: CGFloat(detailsCrayon.green/255), blue: CGFloat(detailsCrayon.blue/255), alpha: 1.0)
         
     }
     
