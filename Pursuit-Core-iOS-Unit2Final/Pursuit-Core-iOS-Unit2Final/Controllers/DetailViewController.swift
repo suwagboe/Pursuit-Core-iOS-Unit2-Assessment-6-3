@@ -46,8 +46,13 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadBackgroundColor()
+        stepperConfigure()
         // need to load the color from seleted color to the view here
        // view.backgroundColor = UIColor(loadBackgroundColor())
+    }
+    
+    func stepperConfigure(){
+        alphaStepper.stepValue = 0.1
     }
     
     func loadBackgroundColor() {
@@ -69,6 +74,17 @@ class DetailViewController: UIViewController {
     
     //MARK: ACTIONS MAKE IMPACTS
     
+    
+    func resetbut() {
+        redSlider.value = Float((selectedColor.red/255))
+        greenSlider.value = Float(selectedColor.green/255)
+        blueSlider.value = Float(selectedColor.blue/255)
+        alphaStepper.value = 1.0
+        
+        
+        view.backgroundColor =  UIColor(displayP3Red: CGFloat(selectedColor.red/255), green: CGFloat(selectedColor.green/255), blue: CGFloat(selectedColor.blue/255), alpha: 1.0)
+    }
+    
     //action for all the sliders below
     
     @IBAction func SliderChangedO(_ sender: UISlider ){
@@ -85,12 +101,20 @@ class DetailViewController: UIViewController {
         else if sender.tag == 2{
                 greenVal = sender.value;
             }
+        
         view.backgroundColor = UIColor(displayP3Red: CGFloat(redVal), green: CGFloat(greenVal), blue: CGFloat(blueVal), alpha: 1.0)
         }
     
  @IBAction func alphaStepperChangedO(_ sender: UIStepper ){
     alphaStepper.value = sender.value
+    
+    
     view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(sender.value))
     }
+    
+    @IBAction func ResetButton(){
+    resetbut()
+    }
+    
     
 }

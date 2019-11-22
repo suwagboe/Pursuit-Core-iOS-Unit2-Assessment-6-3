@@ -98,6 +98,9 @@
                                 <rect key="frame" x="150" y="790" width="114" height="35"/>
                                 <fontDescription key="fontDescription" name=".SFUI-Regular" family=".AppleSystemUIFont" pointSize="20"/>
                                 <state key="normal" title="Rest Button"/>
+                                <connections>
+                                    <action selector="ResetButton" destination="TxF-9h-OKv" eventType="touchUpInside" id="YtK-zy-OPi"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mok-fW-EJb">
                                 <rect key="frame" x="20" y="459.5" width="57" height="33.5"/>
@@ -138,7 +141,7 @@
                                     <action selector="SliderChangedO:" destination="TxF-9h-OKv" eventType="valueChanged" id="DwT-Ql-dXb"/>
                                 </connections>
                             </slider>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="RXQ-9Q-L2K">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="RXQ-9Q-L2K">
                                 <rect key="frame" x="210" y="608" width="94" height="32"/>
                                 <connections>
                                     <action selector="alphaStepperChangedO:" destination="TxF-9h-OKv" eventType="valueChanged" id="rZB-gN-HsU"/>
