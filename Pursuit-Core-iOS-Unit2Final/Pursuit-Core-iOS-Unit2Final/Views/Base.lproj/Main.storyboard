@@ -119,18 +119,30 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ysn-4n-5OS">
                                 <rect key="frame" x="149" y="531" width="227" height="31"/>
+                                <connections>
+                                    <action selector="greenSliderChangedO:" destination="TxF-9h-OKv" eventType="valueChanged" id="6tk-A3-0xO"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cpd-Cn-m09">
                                 <rect key="frame" x="149" y="390" width="227" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="223" id="7xZ-Qb-jsF"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="redSliderChangedO:" destination="TxF-9h-OKv" eventType="valueChanged" id="6b2-wN-2CK"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FP9-TQ-6rm">
                                 <rect key="frame" x="142" y="464" width="234" height="31"/>
+                                <connections>
+                                    <action selector="blueSliderChangedO:" destination="TxF-9h-OKv" eventType="valueChanged" id="ISD-7T-D0V"/>
+                                </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="RXQ-9Q-L2K">
                                 <rect key="frame" x="210" y="608" width="94" height="32"/>
+                                <connections>
+                                    <action selector="alphaStepperChangedO:" destination="TxF-9h-OKv" eventType="valueChanged" id="rZB-gN-HsU"/>
+                                </connections>
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

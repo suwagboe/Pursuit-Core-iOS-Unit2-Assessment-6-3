@@ -53,9 +53,9 @@ class DetailViewController: UIViewController {
             fatalError("couldn't set the selectedColor properly need to redue. ")
         }
         
-        redSlider.value = Float(detailsCrayon.red)
-        blueSlider.value = Float(detailsCrayon.blue)
-        greenSlider.value = Float(detailsCrayon.green)
+        redSlider.value = Float(detailsCrayon.red/255)
+        blueSlider.value = Float(detailsCrayon.blue/255)
+        greenSlider.value = Float(detailsCrayon.green/255)
         alphaStepper.value = (1.0)
         
         view.backgroundColor =  UIColor(displayP3Red: CGFloat(detailsCrayon.red/255), green: CGFloat(detailsCrayon.green/255), blue: CGFloat(detailsCrayon.blue/255), alpha: 1.0)
@@ -67,7 +67,7 @@ class DetailViewController: UIViewController {
     //action for all the sliders below
     
     @IBAction func redSliderChangedO(_ sender: UISlider ){
-      //  view.backgroundColor
+       // view.backgroundColor
         
     }
     
