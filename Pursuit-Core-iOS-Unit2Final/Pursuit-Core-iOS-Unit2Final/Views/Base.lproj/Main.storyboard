@@ -57,6 +57,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Colors " id="tkz-WL-EVq"/>
+                    <connections>
+                        <outlet property="tableView" destination="iLQ-DP-2bw" id="LWb-96-HlD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
