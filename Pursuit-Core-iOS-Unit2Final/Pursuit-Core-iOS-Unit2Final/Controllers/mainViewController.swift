@@ -10,7 +10,9 @@ import UIKit
 
 class mainViewController: UIViewController {
 
+    // this is connected and it has constraints
     @IBOutlet weak var tableView: UITableView!
+    
     
     private var colors = [Crayon]() {
         didSet{
@@ -21,10 +23,17 @@ class mainViewController: UIViewController {
     
   override func viewDidLoad() {
     super.viewDidLoad()
-   
+   loadData()
     // this allows for the data to populate in the tableview when it first loads
     tableView.dataSource = self
+    
   }
+    
+    // need the loadData function inorder to HAVE data
+    func loadData() {
+        // gives the above variable crayons the data of the class crayons; all crayons
+        colors = Crayon.allTheCrayons
+    }
 
 
 }
@@ -37,6 +46,14 @@ extension mainViewController: UITableViewDataSource {
     }
     
     
+    
+    //Do I need this function in order to populate data
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//             colors.count
+//         }
+      
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // allows for the cell to be reused if it is there if not then a new cell will be created.
@@ -44,6 +61,9 @@ extension mainViewController: UITableViewDataSource {
         
         // this variable gives me access to the propeties from colors which is of type crayon.
         let crayon = colors[indexPath.row]
+        
+        //it doesnt have any sections
+        //[indexPath.section]
         
         // configure cell
         cell.textLabel?.text = crayon.name
@@ -54,10 +74,6 @@ extension mainViewController: UITableViewDataSource {
         
     }
    
-    //Do I need this function in order to populate data
-    func numberOfSections(in tableView: UITableView) -> Int {
-           colors.count
-       }
-    
+  
 }
 
